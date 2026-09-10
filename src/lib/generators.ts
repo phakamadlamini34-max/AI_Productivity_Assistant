@@ -63,12 +63,12 @@ export function generateEmail({ purpose, recipient, tone, keyPoints }: EmailInpu
   return [
     `Subject: ${subject}`,
     "",
-    openings[tone] ?? openings.Professional,
+    openings[tone] ?? openings["Professional"]!,
     "",
     body + pointBlock,
     extra ? `\n${extra}` : "",
     "",
-    closings[tone] ?? closings.Professional,
+    closings[tone] ?? closings["Professional"]!,
   ]
     .filter((l) => l !== undefined)
     .join("\n")
@@ -249,7 +249,7 @@ export function generateResearch({ topic, context, outputType }: ResearchInput) 
     ].join("\n"),
   };
 
-  return (blocks[outputType] ?? blocks["Research Summary"]).replace(/\n{3,}/g, "\n\n");
+  return (blocks[outputType] ?? blocks["Research Summary"]!).replace(/\n{3,}/g, "\n\n");
 }
 
 /* --------------------------------- Chatbot -------------------------------- */
