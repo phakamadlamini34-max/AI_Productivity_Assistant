@@ -17,7 +17,7 @@ export function WaypointMark({ className }: { className?: string }) {
 
 export function BrandName({ className }: { className?: string }) {
   return (
-    <span className={cn("font-semibold tracking-tight text-foreground", className)}>
+    <span className={cn("whitespace-nowrap font-semibold tracking-tight text-foreground", className)}>
       AI ne
       <span className="relative inline-block text-accent-foreground">
         <span className="relative z-10 font-black text-primary">X</span>
